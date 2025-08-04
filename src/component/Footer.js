@@ -52,20 +52,22 @@ function Footer() {
                                 <div className="col-xl-6">
                                     <form>
                                         <div className="form-floating">
-                                            <select className="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
+                                            <select className="form-select bg-light border" id="select1">
+                                                 <option value="1">English</option>
+                                                <option value="2">Arabic</option>
+                                                <option value="3">German</option>
+                                                <option value="4">Greek</option>
+                                              
+                                               
                                             </select>
-                                            <label for="select1">English</label>
+                                            <label for="select1">Language</label>
                                         </div>
                                     </form>
                                 </div>
                                 <div className="col-xl-6">
                                     <form>
                                         <div className="form-floating">
-                                            <select className="form-select bg-dark border" id="select1">
+                                            <select className="form-select bg-light border" id="select1">
                                                 <option value="1">USD</option>
                                                 <option value="2">EUR</option>
                                                 <option value="3">INR</option>
@@ -91,19 +93,6 @@ function Footer() {
             </div>
         </div>
        
-        <div className="container-fluid copyright text-body py-4">
-            <div className="container">
-                <div className="row g-4 align-items-center">
-                    <div className="col-md-6 text-center text-md-end mb-md-0">
-                        <i className="fas fa-copyright me-2"></i><a className="text-white" href="#">Your Site Name</a>, All right reserved.
-                    </div>
-                    <div className="col-md-6 text-center text-md-start">
-                       
-                        Designed By <a className="text-white" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <a href="#" className="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i className="fa fa-arrow-up"></i></a>   
 </>

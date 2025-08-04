@@ -5,154 +5,144 @@ function Package(){
 
         <div className="container-fluid bg-breadcrumb">
             <div className="container text-center py-5" style={{maxWidth: '900px'}}>
-                <h3 className="text-white display-3 mb-4"></h3> 
+                <h3 className="text-white display-3 mb-4">Our Packages</h3> 
             </div>
         </div>
-        
 
-         <div className="container-fluid packages py-5">
+<div className="">
             <div className="container py-5">
                 <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
                     <h5 className="section-title px-3">Packages</h5>
                     <h1 className="mb-0">Awesome Packages</h1>
                 </div>
-                <div className="packages-carousel owl-carousel">
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-4.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
+        <div className="row g-4 justify-content-center">
+                    <div className="col-lg-4 col-md-6">
+                        <div className="blog-item">
+                            <div className="blog-img">
+                                <div className="blog-img-inner">
+                                    <img className="img-fluid w-100 rounded-top" src="assets/img/packages-1.jpg" alt="Image"/>
+                                    <div className="blog-icon">
+                                        <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+
+                                    <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                    <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>3 Days</small>
+                                    <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thayland Trip</a>
+                                    <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>2 Person</a>
+                                </div>
+                               
                             </div>
-                            <div className="packages-price py-2 px-4">$349.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Venice - Italy</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
+                            <div className="blog-content border border-top-0 rounded-bottom p-4">
+                                <div className="packages-price mb-3">$349.00</div>
+                                 <div className="mb-3">
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                 </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-2.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
-                            </div>
-                            <div className="packages-price py-2 px-4">$449.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">The New California</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
+                                <p className="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                 <div className="row bg-white rounded-bottom mx-0">
+                                    <div className="col-6 text-start px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                    </div>
+                                    <div className="col-6 text-end px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                  </div>
+                               </div>
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-3.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="blog-item">
+                            <div className="blog-img">
+                                <div className="blog-img-inner">
+                                    <img className="img-fluid w-100 rounded-top" src="assets/img/packages-2.jpg" alt="Image"/>
+                                    <div className="blog-icon">
+                                        <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                                  <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                    <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>3 Days</small>
+                                    <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>The New California</a>
+                                    <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>2 Person</a>
+                                </div>
+                             
                             </div>
-                            <div className="packages-price py-2 px-4">$549.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Discover Japan</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
+                            
+                             <div className="blog-content border border-top-0 rounded-bottom p-4">
+                                  <div className="packages-price mb-3">$349.00</div>
+                                 <div className="mb-3">
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                 </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
+                                <p className="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                
+                                <div className="row bg-white rounded-bottom mx-0">
+                                    <div className="col-6 text-start px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                    </div>
+                                    <div className="col-6 text-end px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                  </div>
+                               </div>
+                               
                             </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-1.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Thayland</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="blog-item">
+                            <div className="blog-img">
+                                <div className="blog-img-inner">
+                                    <img className="img-fluid w-100 rounded-top" src="assets/img/packages-4.jpg" alt="Image"/>
+                                    <div className="blog-icon">
+                                        <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                                <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                    <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>3 Days</small>
+                                    <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Venice - Italy</a>
+                                    <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>2 Person</a>
+                                </div>
                             </div>
-                            <div className="packages-price py-2 px-4">$649.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Thayland Trip</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
+                        <div className="blog-content border border-top-0 rounded-bottom p-4">
+                                  <div className="packages-price mb-3">$649.00</div>
+                                 <div className="mb-3">
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                     <small className="fa fa-star text-primary"></small>
                                 </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
+                                <p className="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                
+                                <div className="row bg-white rounded-bottom mx-0">
+                                    <div className="col-6 text-start px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                    </div>
+                                    <div className="col-6 text-end px-0">
+                                        <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                  </div>
+                               </div>
+                          
                             </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+      
+
+         
         <div className="container-fluid booking py-5">
             <div className="container py-5">
                 <div className="row g-5 align-items-center">

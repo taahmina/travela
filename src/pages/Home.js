@@ -15,8 +15,8 @@ function Home() {
                             <div className="carousel-caption">
                                 <div className="p-3" style={{maxWidth: '900px'}}>
                                     <h4 className="text-white text-uppercase fw-bold mb-4" style={{letterSpacing: '3px'}}>Explore The World</h4>
-                                    <h1 className="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
-                                    <p className="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    <h1 className="display-2 text-capitalize text-white mb-4">Let’s create memories that last forever!</h1>
+                                    <p className="mb-5 fs-5">Every journey begins with a single click — welcome to Travela
                                     </p>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <a className="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
@@ -281,53 +281,45 @@ function Home() {
                                         <div className="col-lg-6">
                                             <div className="destination-img">
                                                 <img className="img-fluid rounded w-100" src="assets/img/destination-1.jpg" alt=""/>
-                                                <div className="destination-overlay p-4">
-                                                    <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
-                                                    <h4 className="text-white mb-2 mt-3">New York City</h4>
-                                                    <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
+                                                   <div className="destination-overlay   bg-secondary p-4">
+                                                    <a href="#" className="btn btn-outline-secondary text-white rounded-pill border py-2 px-3">Read more</a>
+                                                    <h4 className="text-white mb-2 mt-3">Las vegas</h4>
+                                                    <a href="#" className="btn-hover text-white ">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
-                                                <div className="search-icon">
-                                                    <a href="img/destination-1.jpg" data-lightbox="destination-1"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                                </div>
+                                             
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="destination-img">
                                                 <img className="img-fluid rounded w-100" src="assets/img/destination-2.jpg" alt=""/>
-                                                <div className="destination-overlay p-4">
-                                                    <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
-                                                    <h4 className="text-white mb-2 mt-3">Las vegas</h4>
+                                                <div className="destination-overlay bg-secondary p-4">
+                                                    <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
+                                                    <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                                     <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
-                                                <div className="search-icon">
-                                                    <a href="img/destination-2.jpg" data-lightbox="destination-2"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                                </div>
+
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="destination-img">
                                                 <img className="img-fluid rounded w-100" src="assets/img/destination-7.jpg" alt=""/>
-                                                <div className="destination-overlay p-4">
-                                                    <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                <div className="destination-overlay bg-secondary p-4">
+                                                    <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                                     <h4 className="text-white mb-2 mt-3">Los angelas</h4>
                                                     <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
-                                                <div className="search-icon">
-                                                    <a href="img/destination-7.jpg" data-lightbox="destination-7"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="destination-img">
                                                 <img className="img-fluid rounded w-100" src="assets/img/destination-8.jpg" alt=""/>
-                                                <div className="destination-overlay p-4">
-                                                    <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                <div className="destination-overlay bg-secondary p-4">
+                                                    <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                                     <h4 className="text-white mb-2 mt-3">Los angelas</h4>
                                                     <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                                 </div>
-                                                <div className="search-icon">
-                                                    <a href="img/destination-8.jpg" data-lightbox="destination-8"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -335,53 +327,45 @@ function Home() {
                                 <div className="col-xl-4">
                                     <div className="destination-img h-100">
                                         <img className="img-fluid rounded w-100 h-100" src="assets/img/destination-9.jpg" style={{objectFit: "cover", minHeight: "300px"}} alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-9.jpg" data-lightbox="destination-4"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-4.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-4.jpg" data-lightbox="destination-4"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-outline-secondary  text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">Los angelas</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="assets/img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -391,27 +375,23 @@ function Home() {
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -421,27 +401,23 @@ function Home() {
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlaybg-secondary  p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                             </div>
@@ -451,27 +427,23 @@ function Home() {
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -481,27 +453,23 @@ function Home() {
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
-                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                        <div className="destination-overlay bg-secondary p-4">
+                                            <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">Read more</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
+                                        <div className="destination-overlaybg-secondary  p-4">
                                             <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -511,27 +479,23 @@ function Home() {
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-5.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
+                                        <div className="destination-overlay bg-secondary p-4">
                                             <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-5.jpg" data-lightbox="destination-5"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="destination-img">
                                         <img className="img-fluid rounded w-100" src="assets/img/destination-6.jpg" alt=""/>
-                                        <div className="destination-overlay p-4">
+                                        <div className="destination-overlay bg-secondary p-4">
                                             <a href="#" className="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
                                             <h4 className="text-white mb-2 mt-3">San francisco</h4>
                                             <a href="#" className="btn-hover text-white">View All Place <i className="fa fa-arrow-right ms-2"></i></a>
                                         </div>
-                                        <div className="search-icon">
-                                            <a href="img/destination-6.jpg" data-lightbox="destination-6"><i className="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -730,150 +694,13 @@ function Home() {
                 </div>
             </div>
         </div>
-       
-        <div className="container-fluid packages py-5">
-            <div className="container py-5">
-                <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
-                    <h5 className="section-title px-3">Packages</h5>
-                    <h1 className="mb-0">Awesome Packages</h1>
-                </div>
-                <div className="packages-carousel owl-carousel">
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-4.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
-                            </div>
-                            <div className="packages-price py-2 px-4">$349.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Venice - Italy</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-2.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
-                            </div>
-                            <div className="packages-price py-2 px-4">$449.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">The New California</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-3.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
-                            </div>
-                            <div className="packages-price py-2 px-4">$549.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Discover Japan</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="packages-item">
-                        <div className="packages-img">
-                            <img src="assets/img/packages-1.jpg" className="img-fluid w-100 rounded-top" alt="Image"/>
-                            <div className="packages-info d-flex border border-start-0 border-end-0 position-absolute" style={{width: '100%', bottom: '0', left: '0', zIndex: '5'}}>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"></i>Thayland</small>
-                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"></i>3 days</small>
-                                <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"></i>2 Person</small>
-                            </div>
-                            <div className="packages-price py-2 px-4">$649.00</div>
-                        </div>
-                        <div className="packages-content bg-light">
-                            <div className="p-4 pb-0">
-                                <h5 className="mb-0">Thayland Trip</h5>
-                                <small className="text-uppercase">Hotel Deals</small>
-                                <div className="mb-3">
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                    <small className="fa fa-star text-primary"></small>
-                                </div>
-                                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                            </div>
-                            <div className="row bg-primary rounded-bottom mx-0">
-                                <div className="col-6 text-start px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Read More</a>
-                                </div>
-                                <div className="col-6 text-end px-0">
-                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         
+ 
+
+       
+      
+   
         <div className="container-fluid gallery py-5 my-5">
             <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
                 <h5 className="section-title px-3">Our Gallery</h5>
@@ -1445,96 +1272,6 @@ function Home() {
             </div>
         </div>
       
-        <div className="container-fluid testimonial py-5">
-            <div className="container py-5">
-                <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
-                    <h5 className="section-title px-3">Testimonial</h5>
-                    <h1 className="mb-0">Our Clients Say!!!</h1>
-                </div>
-                <div className="testimonial-carousel owl-carousel">
-                    <div className="testimonial-item text-center rounded pb-4">
-                        <div className="testimonial-comment bg-light rounded p-4">
-                            <p className="text-center mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis,
-                            </p>
-                        </div>
-                        <div className="testimonial-img p-1">
-                            <img src="assets/img/testimonial-1.jpg" className="img-fluid rounded-circle" alt="Image"/>
-                        </div>
-                        <div style={{marginTop: "-35px"}}>
-                            <h5 className="mb-0">John Abraham</h5>
-                            <p className="mb-0">New York, USA</p>
-                            <div className="d-flex justify-content-center">
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testimonial-item text-center rounded pb-4">
-                        <div className="testimonial-comment bg-light rounded p-4">
-                            <p className="text-center mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis,
-                            </p>
-                        </div>
-                        <div className="testimonial-img p-1">
-                            <img src="assets/img/testimonial-2.jpg" className="img-fluid rounded-circle" alt="Image"/>
-                        </div>
-                        <div style={{marginTop: "-35px"}}>
-                            <h5 className="mb-0">John Abraham</h5>
-                            <p className="mb-0">New York, USA</p>
-                            <div className="d-flex justify-content-center">
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testimonial-item text-center rounded pb-4">
-                        <div className="testimonial-comment bg-light rounded p-4">
-                            <p className="text-center mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis,
-                            </p>
-                        </div>
-                        <div className="testimonial-img p-1">
-                            <img src="assets/img/testimonial-3.jpg" className="img-fluid rounded-circle" alt="Image"/>
-                        </div>
-                        <div style={{marginTop: '-35px'}}>
-                            <h5 className="mb-0">John Abraham</h5>
-                            <p className="mb-0">New York, USA</p>
-                            <div className="d-flex justify-content-center">
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="testimonial-item text-center rounded pb-4">
-                        <div className="testimonial-comment bg-light rounded p-4">
-                            <p className="text-center mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis,
-                            </p>
-                        </div>
-                        <div className="testimonial-img p-1">
-                            <img src="assets/img/testimonial-4.jpg" className="img-fluid rounded-circle" alt="Image"/>
-                        </div>
-                        <div style={{marginTop: '-35px'}}>
-                            <h5 className="mb-0">John Abraham</h5>
-                            <p className="mb-0">New York, USA</p>
-                            <div className="d-flex justify-content-center">
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                                <i className="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div className="container-fluid subscribe py-5">
             <div className="container text-center py-5">
