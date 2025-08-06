@@ -1,12 +1,14 @@
 import React, { useEffect,useState} from 'react';
 import axios from 'axios';
 import Adminlayout from '../layout/Adminlayout';
+
 import{Link} from 'react-router-dom';
 
 
 
 function Users(){
-    const[users,setUsers]=useState([])
+    const[users,setUsers]=useState([]);
+    
 
     axios.get(`http://localhost/travela-api/users.php`).then(function(response){
         setUsers(response.data);
