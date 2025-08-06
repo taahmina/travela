@@ -1,6 +1,10 @@
+
+import * as React from 'react';
+import Weblayout from '../layout/Weblayout';
+
 function Home() {
   return (
-    <>
+    <Weblayout>
 
             <div className="carousel-header">
                 <div id="carouselId" className="carousel slide" data-bs-ride="carousel">
@@ -1289,7 +1293,7 @@ function Home() {
         </div>
         
         
-    </>
+    </Weblayout>
    
   );
 }

@@ -1,6 +1,10 @@
+import * as React from 'react';
+import Weblayout from '../layout/Weblayout';
+
+
 function About(){
     return(
-        <>
+        <Weblayout>
         <div className="container-fluid bg-breadcrumb">
             <div className="container text-center py-5" style={{maxWidth: '900px'}}>
                 <h3 className="text-white display-3 mb-4">About Us</h3> 
@@ -157,7 +161,7 @@ function About(){
                         </div>
                     </div>
     
-        </>
+        </Weblayout>
     );
 }
 export default About;

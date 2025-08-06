@@ -7,18 +7,19 @@ import Package from './pages/Package';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
-import'./assets/importfile.css';
-import'./assets/lib/owlcarousel/assets/owl.carousel.min.css';
-import'bootstrap/dist/css/bootstrap.min.css';
-import'./assets/lib/lightbox/css/lightbox.min.css';
-import'./assets/css/style.css';
 
+
+/* admin route */
+import Dashboard from './Admin/Dashboard';
+import Users from './Admin/Users';
+import Useradd from './Admin/Useradd';
 
 
 
 
 function App(){
     return(
+        <>
         <Routes>
             <Route path="/" element={<Home/>}/>
              <Route path="/about" element={<About/>}/>
@@ -26,8 +27,12 @@ function App(){
                <Route path="/package" element={<Package/>}/>
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
+               {/*Admin route*/}
+               <Route path="/admin/dashboard" element={<Dashboard />} />
+                <Route path="/admin/user" element={<Users />} />
+                <Route path="/admin/add-user" element={<Useradd />} />
         </Routes>
-       
+       </>
     );
 }
 export default App;
