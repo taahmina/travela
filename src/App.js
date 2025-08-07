@@ -1,5 +1,6 @@
-import * as React from "react";
-import{BrowserRouter,Route,Routes} from "react-router-dom";
+
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router';
 import About from './pages/About';
 import Home from './pages/Home';
 import Service from './pages/Service';
@@ -10,14 +11,28 @@ import Contact from './pages/Contact';
 
 
 /* admin route */
+import Login from './Admin/Login';
+import Register from './Admin/Register';
 import Dashboard from './Admin/Dashboard';
 import Users from './Admin/Users';
 import Useradd from './Admin/Useradd';
+import Protected from './Admin/protected';
+
 
 
 
 
 function App(){
+const [ isSignedIn, setIsSignedIn ] = useState(()=> {
+    /* if you want, user will be logged in until they logout*/
+    //return localStorage.getItem("access_token") || false;
+    /* if you want, user will be logged when they close the browser*/
+    return sessionStorage.getItem("access_token") || false;
+  });
+  
+
+
+
     return(
         <>
         <Routes>
@@ -27,10 +42,18 @@ function App(){
                <Route path="/package" element={<Package/>}/>
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/register" element={<Register />} />
+               <Route path="/login" element={<Login />} />
+
+               
                {/*Admin route*/}
-               <Route path="/admin/dashboard" element={<Dashboard />} />
-                <Route path="/admin/user" element={<Users />} />
-                <Route path="/admin/add-user" element={<Useradd />} />
+               <Route path= {"/admin/dashboard"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Dashboard /> 
+           </Protected>
+           } />
+          <Route path= {"/admin/user"} element={<Users /> } />
+          <Route path="/admin/add-user" element={<Useradd />} />
         </Routes>
        </>
     );
