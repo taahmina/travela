@@ -4,9 +4,10 @@ import { Route, Routes } from 'react-router';
 import About from './pages/About';
 import Home from './pages/Home';
 import Service from './pages/Service';
-import Package from './pages/Package';
+
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import Packages_page from './pages/Packages_page';
 
 
 
@@ -15,7 +16,9 @@ import Login from './Admin/Login';
 import Register from './Admin/Register';
 import Dashboard from './Admin/Dashboard';
 import Users from './Admin/Users';
-import Useradd from './Admin/Useradd';
+import Categories from './Admin/Categories';
+import Packages from './Admin/Packages';
+
 import Protected from './Admin/protected';
 
 
@@ -39,7 +42,7 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
             <Route path="/" element={<Home/>}/>
              <Route path="/about" element={<About/>}/>
               <Route path="/service" element={<Service/>}/>
-               <Route path="/package" element={<Package/>}/>
+               <Route path="/package" element={<Packages_page/>}/>
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
                 <Route path="/register" element={<Register />} />
@@ -48,12 +51,27 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                
                {/*Admin route*/}
                <Route path= {"/admin/dashboard"} element={
-            <Protected  isSignedIn= {isSignedIn} >
-              <Dashboard /> 
-           </Protected>
-           } />
-          <Route path= {"/admin/user"} element={<Users /> } />
-          <Route path="/admin/add-user" element={<Useradd />} />
+                  <Protected  isSignedIn= {isSignedIn} >
+                    <Dashboard /> 
+                </Protected>
+                } />
+                 <Route path= {"/admin/user"} element={
+                  <Protected  isSignedIn= {isSignedIn} >
+                    <Users /> 
+                </Protected>
+                } />
+      
+      
+           <Route path= {"/admin/categories"} element={
+                <Protected  isSignedIn= {isSignedIn} >
+                  <Categories /> 
+              </Protected>
+              } />
+          <Route path= {"/admin/packages"} element={
+              <Protected  isSignedIn= {isSignedIn} >
+                <Packages /> 
+            </Protected>
+            } />
         </Routes>
        </>
     );

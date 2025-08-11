@@ -1,8 +1,18 @@
 
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Weblayout from '../layout/Weblayout';
+import axios from '../Admin/component/axios';
 
 function Home() {
+    const [packages,setPackages]=useState([]);
+   useEffect(() => {
+       getPackages();
+     }, []);
+   
+     const getPackages = async (e) => {
+       let res = await axios.get(`front_api/packages.php`)
+       setPackages(res.data);
+     }
   return (
     <Weblayout>
 
@@ -508,7 +518,8 @@ function Home() {
                 </div>
             </div>
         </div>
-      
+
+          
         
         <div className="container-fluid ExploreTour py-5">
             <div className="container py-5">
@@ -698,8 +709,66 @@ function Home() {
                 </div>
             </div>
         </div>
-
+    <section id="packages" className="package section">
+                <div className="packge">
+                    <div className="container py-5">
+                        <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
+                            <h5 className="section-title px-3">Packages</h5>
+                            <h1 className="mb-0">Awesome Packages</h1>
+                        </div>
+                    </div>
+                </div>
+                
         
+        <div className="row g-4 justify-content-center">
+                <div className="col-lg-4 col-md-6">
+                
+                 {packages.length > 0 && packages.map((d, key) =>
+                        <div className="blog-item">
+                                <div className="blog-img">
+                 
+                                    <div className="blog-img-inner">
+                                        <img className="img-fluid w-100 rounded-top" src={`${process.env.REACT_APP_API_URL}${d.image}`} alt="Image"/>
+                                        <div className="blog-icon">
+                                            <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                        <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>3 Days</small>
+                                        <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{d.title}</a>
+                                        <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>2 Person</a>
+                                    </div>
+                                
+                                </div>
+                                <div className="blog-content border border-top-0 rounded-bottom p-4">
+                                    <div className="packages-price mb-3">{d.price}  
+                                    </div>
+                                            <div className="mb-3">
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                            </div>
+                                        <p className="my-3">{d.description}</p>
+                                            <div className="row bg-white rounded-bottom mx-0">
+                                                <div className="col-6 text-start px-0">
+                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                                </div>
+                                                <div className="col-6 text-end px-0">
+                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                                </div>
+                                          </div>
+                                  
+                               </div>
+                               </div>
+                                    
+                     )}
+                </div>
+            </div>
+           
+        </section>
  
 
        
