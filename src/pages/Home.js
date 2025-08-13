@@ -2,8 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import Weblayout from '../layout/Weblayout';
 import axios from '../Admin/component/axios';
+import { useCart } from "react-use-cart";
 
 function Home() {
+    const { addItem } = useCart();
+
     const [packages,setPackages]=useState([]);
    useEffect(() => {
        getPackages();
@@ -721,10 +724,12 @@ function Home() {
                 
         
         <div className="row g-4 justify-content-center">
+             {packages.length > 0 && packages.map((d, key) =>
                 <div className="col-lg-4 col-md-6">
                 
-                 {packages.length > 0 && packages.map((d, key) =>
+              
                         <div className="blog-item">
+                              
                                 <div className="blog-img">
                  
                                     <div className="blog-img-inner">
@@ -754,18 +759,21 @@ function Home() {
                                         <p className="my-3">{d.description}</p>
                                             <div className="row bg-white rounded-bottom mx-0">
                                                 <div className="col-6 text-start px-0">
-                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                                    <a href="#" className="btn btn-success rounded-pill  text-white py-2 px-4">Read More</a>
                                                 </div>
                                                 <div className="col-6 text-end px-0">
-                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                                    <button className='btn btn-primary rounded-pill  text-white py-2 px-4' onClick={() => addItem(d)}>Book Now</button>
+                                                   
                                                 </div>
                                           </div>
                                   
                                </div>
+                             
                                </div>
                                     
-                     )}
+                    
                 </div>
+                   )}
             </div>
            
         </section>

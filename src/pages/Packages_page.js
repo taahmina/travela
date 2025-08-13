@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Weblayout from '../layout/Weblayout';
 import axios from '../Admin/component/axios';
+import { useCart } from "react-use-cart";
+
+
 function Packages_page() {
+    const { addItem } = useCart();
+    
 const [packages,setPackages]=useState([]);
    useEffect(() => {
        getPackages();
@@ -16,18 +21,14 @@ const [packages,setPackages]=useState([]);
 
     return(
         <Weblayout>
+   <div className="container-fluid bg-breadcrumb">
+            <div className="container text-center py-5" style={{maxWidth: '900px'}}>
+                <h3 className="text-white display-3 mb-4"></h3> 
+            </div>
+        </div>
 
 
-<div className="main">
-            <div className="container py-5">
-                <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
-                    <h5 className="section-title px-3">Packages</h5>
-                    <h1 className="mb-0">Awesome Packages</h1>
-                </div>
-            </div> 
-    </div> 
-
-    <section id="packages" className="package section">
+<section id="packages" className="package section">
                 <div className="packge">
                     <div className="container py-5">
                         <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
@@ -39,10 +40,12 @@ const [packages,setPackages]=useState([]);
                 
         
         <div className="row g-4 justify-content-center">
+             {packages.length > 0 && packages.map((d, key) =>
                 <div className="col-lg-4 col-md-6">
                 
-                 {packages.length > 0 && packages.map((d, key) =>
+              
                         <div className="blog-item">
+                              
                                 <div className="blog-img">
                  
                                     <div className="blog-img-inner">
@@ -72,21 +75,29 @@ const [packages,setPackages]=useState([]);
                                         <p className="my-3">{d.description}</p>
                                             <div className="row bg-white rounded-bottom mx-0">
                                                 <div className="col-6 text-start px-0">
-                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Read More</a>
+                                                    <a href="#" className="btn btn-success rounded-pill  text-white py-2 px-4">Read More</a>
                                                 </div>
                                                 <div className="col-6 text-end px-0">
-                                                    <a href="#" className="btn-hover btn text-primary py-2 px-4">Book Now</a>
+                                                    <button className='btn btn-primary rounded-pill  text-white py-2 px-4' onClick={() => addItem(d)}>Book Now</button>
+                                                   
                                                 </div>
                                           </div>
                                   
                                </div>
+                             
                                </div>
                                     
-                     )}
+                    
                 </div>
+                   )}
             </div>
            
         </section>
+ 
+
+
+
+
 
 
         <div className="container-fluid booking py-5">

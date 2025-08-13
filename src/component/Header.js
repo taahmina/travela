@@ -1,7 +1,10 @@
 import * as React from 'react';
 import {Link,useLocation}from 'react-router'
+import { useCart } from "react-use-cart";
 
+ 
 function Header() {
+     const { totalUniqueItems } = useCart();
   return (
     <>
         
@@ -48,11 +51,9 @@ function Header() {
                     <div className="navbar-nav ms-auto py-0">
                         <Link to={"/"} className="nav-item nav-link active">Home</Link>
                          <Link to={"/about"} className="nav-item nav-link">About</Link>
-                           <Link to={"/service"} className="nav-item nav-link">Services</Link>
-                             <Link to={"/package"} className="nav-item nav-link">Packages</Link>
-                                <Link to={"/blog"} className="nav-item nav-link">Blog</Link>
-                                  
-                       
+                        <Link to={"/service"} className="nav-item nav-link">Services</Link>
+                        <Link to={"/package"} className="nav-item nav-link">Packages</Link>
+                        <Link to={"/blog"} className="nav-item nav-link">Blog</Link>
                        
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -66,9 +67,11 @@ function Header() {
                                 <a href="404.html" className="dropdown-item">404 Page</a>
                             </div>
                         </div>
-                        <Link to={"/contact"} className="nav-item nav-link">Contact</Link>
-                  
-                    </div>
+                        <Link to={"/contact"} className="nav-item nav-link">Contact</Link> 
+                 
+                      <Link to={'/cart'} className="nav-item nav-link"> {totalUniqueItems} <i className="bi bi-cart"></i></Link>
+                     </div>
+                   
                     <a href="" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
                 

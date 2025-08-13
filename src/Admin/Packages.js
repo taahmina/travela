@@ -6,7 +6,8 @@ import Modal from 'react-bootstrap/Modal';
 
 function Packages() {
   const [list,setList]=useState([]);// this page main data
-  const [cat,setCat]=useState([]);// relational category data. It's used in select box of category
+  const [cat,setCat]=useState([]);// relational continent data. It's used in select box of continent
+  const [count,setCount]=useState([]);// relational country data. It's used in select box of country
   const [show, setShow] = useState(false);
   const [inputs, setInputs] = useState([]);
   const [selectedfile, setSelectedFile] = useState([]);// image file
@@ -17,7 +18,8 @@ function Packages() {
   const handleShow = () => {
     setInputs({
             id:'',
-            category_id:'',
+            continents_id:'',
+            countries_id:'',
             title:'',
             description:'',
             price:'',
@@ -25,8 +27,10 @@ function Packages() {
         });
         
     setShow(true);
-    getCategories();// this is call category to add option in category select box
+    getContinents();// this is call countries to add option in category select box
   }
+    
+    
 
   useEffect(() => {
     getDatas();
@@ -37,9 +41,13 @@ function Packages() {
     setList(res.data);
   }
 
-  const getCategories = async (e) => {
-      let res = await axios.get(`categories/list.php`)
+  const getContinents = async (e) => {
+      let res = await axios.get(`continents/list.php`)
       setCat(res.data);
+  }
+    const getCountry = async (e) => {
+      let res = await axios.get(`front_api/countries.php?continents_id=${e.target.value}`)
+      setCount(res.data);
   }
 
   /* handel image/file */
@@ -51,7 +59,8 @@ function Packages() {
     e.preventDefault();
 
     let datas={
-        category_id:e.target.category_id.value,
+        continents_id:e.target.continents_id.value,
+        countries_id:e.target.countries_id.value,
         title:e.target.title.value,
         description:e.target.description.value,
         price:e.target.price.value,
@@ -92,7 +101,7 @@ function Packages() {
   }
   /* function for edit */
   const showEdit=(e) => {
-    getCategories();// this is call category to add option in category select box
+    getContinents();// this is call continent to add option in continent select box
     setInputs(e);
     setShow(true);
   }
@@ -115,7 +124,8 @@ function Packages() {
           <thead>
           <tr>
             <th>#SL</th>
-            <th>Category</th>
+            <th>Continent</th>
+            <th>Country</th>
             <th>Title</th>
             <th>Description</th>
             <th>Price</th>
@@ -129,6 +139,7 @@ function Packages() {
             <tr key={key}>
               <td className="text-bold-500">{key+1}</td>
               <td>{d.cat_name}</td>
+               <td>{d.count_name}</td>
               <td>{d.title}</td>
               <td>{d.description}</td>
               <td>{d.price}</td>
@@ -151,11 +162,23 @@ function Packages() {
           </Modal.Header>
           <Modal.Body>
               <div className='form-group'>
-                  <label htmlFor='category_id'>Category </label>
+                  <label htmlFor='continents_id'>Continent </label>
                   {cat.length > 0 && (
-                  <select defaultValue={inputs.category_id} className='form-control' name="category_id" id='category_id'>
-                    <option value="">Select Category</option>
+                  <select defaultValue={inputs.continents_id} onChange={getCountry} className='form-control' name="continents_id" id='continents_id'>
+                    <option value="">Select Continent</option>
                       {cat.map((d, key) =>
+                        <option key={d.id} value={d.id}>{d.name}</option>
+                      )}
+                  </select>
+                  )}
+              </div>
+
+              <div className='form-group'>
+                  <label htmlFor='countries_id'>Country </label>
+                  {count.length > 0 && (
+                  <select defaultValue={inputs.countries_id}  className='form-control' name="countries_id" id='countries_id'>
+                    <option value="">Select Country</option>
+                      {count.map((d, key) =>
                         <option key={d.id} value={d.id}>{d.name}</option>
                       )}
                   </select>

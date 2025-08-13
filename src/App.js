@@ -1,13 +1,15 @@
 
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
+import { CartProvider, useCart } from "react-use-cart";
+
 import About from './pages/About';
 import Home from './pages/Home';
 import Service from './pages/Service';
-
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Packages_page from './pages/Packages_page';
+import Cart from './pages/Cart';
 
 
 
@@ -16,9 +18,9 @@ import Login from './Admin/Login';
 import Register from './Admin/Register';
 import Dashboard from './Admin/Dashboard';
 import Users from './Admin/Users';
-import Categories from './Admin/Categories';
+import Continents from './Admin/Continents';
+import Countries from './Admin/Countries';
 import Packages from './Admin/Packages';
-
 import Protected from './Admin/protected';
 
 
@@ -38,6 +40,7 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
 
     return(
         <>
+        <CartProvider>
         <Routes>
             <Route path="/" element={<Home/>}/>
              <Route path="/about" element={<About/>}/>
@@ -45,6 +48,7 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                <Route path="/package" element={<Packages_page/>}/>
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
+                 <Route path='/cart' element={<Cart/>}/>
                 <Route path="/register" element={<Register />} />
                <Route path="/login" element={<Login />} />
 
@@ -62,9 +66,14 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                 } />
       
       
-           <Route path= {"/admin/categories"} element={
+           <Route path= {"/admin/continents"} element={
                 <Protected  isSignedIn= {isSignedIn} >
-                  <Categories /> 
+                  <Continents /> 
+              </Protected>
+              } />
+              <Route path= {"/admin/countries"} element={
+                <Protected  isSignedIn= {isSignedIn} >
+                  <Countries /> 
               </Protected>
               } />
           <Route path= {"/admin/packages"} element={
@@ -73,6 +82,7 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
             </Protected>
             } />
         </Routes>
+        </CartProvider>
        </>
     );
 }
