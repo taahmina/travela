@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Packages_page from './pages/Packages_page';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 
 
@@ -22,6 +23,9 @@ import Continents from './Admin/Continents';
 import Countries from './Admin/Countries';
 import Cities from './Admin/Cities';
 import Packages from './Admin/Packages';
+import Coupon from './Admin/Coupon';
+import Orders from './Admin/Orders';
+
 import Protected from './Admin/protected';
 
 
@@ -50,6 +54,7 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
                  <Route path='/cart' element={<Cart/>}/>
+                 <Route path='/checkout' element={<Checkout/>}/>
                 <Route path="/register" element={<Register />} />
                <Route path="/login" element={<Login />} />
 
@@ -87,6 +92,17 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                 <Packages /> 
             </Protected>
             } />
+             <Route path= {"/admin/coupon"} element={
+                  <Protected  isSignedIn= {isSignedIn} >
+                    <Coupon /> 
+                  </Protected>
+                  } />
+                   <Route path= {"/admin/orders"} element={
+                  <Protected  isSignedIn= {isSignedIn} >
+                    <Orders /> 
+                  </Protected>
+                  } />
+
         </Routes>
         </CartProvider>
        </>

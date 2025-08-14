@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Weblayout from '../layout/Weblayout';
 import { useCart } from "react-use-cart";
+import axios from '../Admin/component/axios';
+import { Link,useLocation } from 'react-router'
 
 function Cart () {
      const {
@@ -8,8 +10,27 @@ function Cart () {
         items,
         updateItemQuantity,
         removeItem,
-        cartTotal 
+        cartTotal,
+        setCartMetadata,
+        metadata  
       } = useCart();
+
+const [discount,setDiscount]=React.useState(metadata.discount ?? 0);
+    const checkCoupon=async () => {
+      let code=document.getElementById('coupon_code').value;
+      let res = await axios.get(`front_api/coupon_check.php?code=${code}`);
+      if(res.data){
+        if(res.data?.amount){
+          let dis=cartTotal * (parseFloat(res.data?.amount)/100);
+          setDiscount(dis);
+          setCartMetadata({ discount: dis });
+        }
+      }
+    }
+
+
+
+
     return(
         <Weblayout>
     
@@ -85,6 +106,19 @@ function Cart () {
                     )
                 }
                 
+                   <tr className="bottom_button">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <div className="cupon_text">
+                            <input id="coupon_code" type="text" placeholder="Coupon Code" />
+                            <button onClick={checkCoupon} className="main_btn" >Apply</button>
+                          </div>
+                        </td>
+                      </tr>
+
+
                 <tr>
                   <td></td>
                   <td></td>
@@ -96,6 +130,39 @@ function Cart () {
                   </td>
                 </tr>
                 
+<tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <h5>Discount</h5>
+                        </td>
+                        <td>
+                          <h5>{discount}</h5>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <h5>total</h5>
+                        </td>
+                        <td>
+                          <h5>{cartTotal - discount}</h5>
+                        </td>
+                      </tr>
+                      <tr className="out_button_area">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <div className="checkout_btn_inner">
+                            <Link to={'/'} className="gray_btn" href="#">Continue Shopping</Link>
+                            <Link to={'/checkout'} className="main_btn" href="#">Proceed to checkout</Link>
+                          </div>
+                        </td>
+                      </tr>
+
+
               </tbody>
             </table>
           </div>
