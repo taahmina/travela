@@ -26,6 +26,9 @@ function Header(){
                   <li className="nav-item">
                     <Link className="nav-link" to={"/admin/countries"}>Countries</Link>
                   </li>
+                   <li className="nav-item">
+                    <Link className="nav-link" to={"/admin/cities"}>Cities</Link>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" to={"/admin/packages"}>Packages</Link>
                   </li>

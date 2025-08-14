@@ -20,6 +20,7 @@ import Dashboard from './Admin/Dashboard';
 import Users from './Admin/Users';
 import Continents from './Admin/Continents';
 import Countries from './Admin/Countries';
+import Cities from './Admin/Cities';
 import Packages from './Admin/Packages';
 import Protected from './Admin/protected';
 
@@ -74,6 +75,11 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
               <Route path= {"/admin/countries"} element={
                 <Protected  isSignedIn= {isSignedIn} >
                   <Countries /> 
+              </Protected>
+              } />
+                <Route path= {"/admin/cities"} element={
+                <Protected  isSignedIn= {isSignedIn} >
+                  <Cities /> 
               </Protected>
               } />
           <Route path= {"/admin/packages"} element={

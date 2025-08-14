@@ -8,6 +8,7 @@ function Packages() {
   const [list,setList]=useState([]);// this page main data
   const [cat,setCat]=useState([]);// relational continent data. It's used in select box of continent
   const [count,setCount]=useState([]);// relational country data. It's used in select box of country
+  const [cit,setCit]=useState([]);// relational country data. It's used in select box of country
   const [show, setShow] = useState(false);
   const [inputs, setInputs] = useState([]);
   const [selectedfile, setSelectedFile] = useState([]);// image file
@@ -20,6 +21,7 @@ function Packages() {
             id:'',
             continents_id:'',
             countries_id:'',
+            cities_id:'',
             title:'',
             description:'',
             price:'',
@@ -28,6 +30,7 @@ function Packages() {
         
     setShow(true);
     getContinents();// this is call countries to add option in category select box
+  
   }
     
     
@@ -46,10 +49,25 @@ function Packages() {
       setCat(res.data);
   }
     const getCountry = async (e) => {
-      let res = await axios.get(`front_api/countries.php?continents_id=${e.target.value}`)
+      let contid=0;
+      if(e && e.target){
+        contid=e.target.value
+      }else{
+        contid=e
+      }
+      let res = await axios.get(`front_api/countries.php?continents_id=${contid}`)
       setCount(res.data);
   }
-
+    const getCity = async (e) => {
+      let countid=0;
+      if(e && e.target){
+        countid=e.target.value
+      }else{
+        countid=e
+      }
+      let res = await axios.get(`front_api/cities.php?countries_id=${countid}`)
+      setCit(res.data);
+  }
   /* handel image/file */
   const handelFile = (e) => {
     setSelectedFile(e.target.files)
@@ -61,6 +79,7 @@ function Packages() {
     let datas={
         continents_id:e.target.continents_id.value,
         countries_id:e.target.countries_id.value,
+        cities_id:e.target.cities_id.value,
         title:e.target.title.value,
         description:e.target.description.value,
         price:e.target.price.value,
@@ -102,6 +121,8 @@ function Packages() {
   /* function for edit */
   const showEdit=(e) => {
     getContinents();// this is call continent to add option in continent select box
+        getCountry(e.continents_id);
+            getCity(e.countries_id);
     setInputs(e);
     setShow(true);
   }
@@ -126,6 +147,7 @@ function Packages() {
             <th>#SL</th>
             <th>Continent</th>
             <th>Country</th>
+             <th>City</th>
             <th>Title</th>
             <th>Description</th>
             <th>Price</th>
@@ -140,6 +162,7 @@ function Packages() {
               <td className="text-bold-500">{key+1}</td>
               <td>{d.cat_name}</td>
                <td>{d.count_name}</td>
+              <td>{d.cit_name}</td>
               <td>{d.title}</td>
               <td>{d.description}</td>
               <td>{d.price}</td>
@@ -176,7 +199,7 @@ function Packages() {
               <div className='form-group'>
                   <label htmlFor='countries_id'>Country </label>
                   {count.length > 0 && (
-                  <select defaultValue={inputs.countries_id}  className='form-control' name="countries_id" id='countries_id'>
+                  <select defaultValue={inputs.countries_id} onChange={getCity} className='form-control' name="countries_id" id='countries_id'>
                     <option value="">Select Country</option>
                       {count.map((d, key) =>
                         <option key={d.id} value={d.id}>{d.name}</option>
@@ -184,6 +207,19 @@ function Packages() {
                   </select>
                   )}
               </div>
+
+                 <div className='form-group'>
+                  <label htmlFor='cities_id'>City </label>
+                  {cit.length > 0 && (
+                  <select defaultValue={inputs.cities_id}  className='form-control' name="cities_id" id='cities_id'>
+                    <option value="">Select City</option>
+                      {cit.map((d, key) =>
+                        <option key={d.id} value={d.id}>{d.name}</option>
+                      )}
+                  </select>
+                  )}
+              </div>
+
               <div className='form-group'>
                   <label htmlFor='title'>Title</label>
                   <input type='text' defaultValue={inputs.title} className='form-control' name="title" id='title'/>
