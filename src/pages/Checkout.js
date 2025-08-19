@@ -1,17 +1,31 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Weblayout from '../layout/Weblayout';
-import { useCart } from "react-use-cart";
 import axios from '../Admin/component/axios';
+import {useParams} from "react-router-dom";
 
 function Checkout () {
-    const {
-      isEmpty,
-      items,
-      emptyCart,
-      cartTotal,
-      metadata 
-    } = useCart();
+    const {id} = useParams();
+    const [packages,setPackages]=useState([]);
+    const [packagesPrice,setPackagesPrice]=useState(0);
+    
 
+    useEffect(() => {
+        getPackages();
+    }, []);
+    
+    const getPackages = async (e) => {
+        let res = await axios.get(`front_api/packages.php?id=${id}`)
+        console.log(res.data[0].title)
+        setPackages(res.data[0] ?? []);
+        setPackagesPrice(res.data[0].price ?? 0)
+    }
+
+    const p_price = async (e) => {
+        if(e.target.value){
+            let price=parseInt(e.target.value) * parseInt(packages.price);
+            setPackagesPrice(price)
+        }
+    }
     
     const saveCheckout=async (e) => {
       e.preventDefault();
@@ -20,15 +34,15 @@ function Checkout () {
         customer_name:e.target.customer_name.value,
         customer_contact:e.target.customer_contact.value,
         customer_email:e.target.customer_email.value,
-        billing_address:e.target.billing_address.value,
-        billing_city:e.target.billing_city.value,
-        shipping_address:e.target.shipping_address.value,
-        shipping_city:e.target.shipping_city.value,
-        sub_total:cartTotal,
-        discount:metadata.discount ?? 0,
-        grand_total:(cartTotal - metadata.discount ?? 0),
-        cart_details:JSON.stringify(items)
+        customer_address:e.target.customer_address.value,
+        person:e.target.person.value,
+        datetime:e.target.datetime.value,
+        messege:e.target.messege.value,
+      
+        sub_total:packagesPrice,
+        item_details:JSON.stringify(packages)
       }
+      console.log(datas);
       const formData = new FormData();
       for (const property in datas) {
         formData.append(property, datas[property])
@@ -38,12 +52,11 @@ function Checkout () {
           let url=`front_api/checkout.php`
           
           let res= await axios.post(url,formData);
-          // console.log(res);
+           //console.log(res);
           // return false;
           if(res.data.error == 1){
             alert(res.data.message)
           }else{
-            emptyCart();
             window.location.href='/';
           }
         } 
@@ -52,170 +65,106 @@ function Checkout () {
         }
     }
 
-    
+
     return(
         <Weblayout>
-    <section className="banner_area">
-      <div className="banner_inner d-flex align-items-center">
-        <div className="container">
-          <div
-            className="banner_content d-md-flex justify-content-between align-items-center"
-          >
-            <div className="mb-3 mb-md-0">
-              <h2>Product Checkout</h2>
-              <p>Very us move be blessed multiply night</p>
-            </div>
-            <div className="page_link">
-              <a href="index.html">Home</a>
-              <a href="checkout.html">Product Checkout</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section className="checkout_area section_gap">
-      <div className="container">
         
-        <div className="billing_details">
-          <div className="row">
-            <div className="col-lg-8">
-              <h3>Billing Details</h3>
-              <form
-                className="row contact_form"
-                onSubmit={saveCheckout}
-              >
-                
-                <div className="col-md-12 form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="customer_name"
-                    name="customer_name"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div className="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="customer_contact"
-                    name="customer_contact"
-                     placeholder="Contact Number"
-                  />
-                  <span
-                    className="placeholder"
-                    data-placeholder="Phone number"
-                  ></span>
-                </div>
-                <div className="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="customer_email"
-                    name="customer_email"
-                  />
-                  <span
-                    className="placeholder"
-                    data-placeholder="Email Address"
-                  ></span>
-                </div>
-                
-                <div className="col-md-12 form-group p_star">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="billing_address"
-                    name="billing_address"
-                  />
-                  <span
-                    className="placeholder"
-                    data-placeholder="Address line 01"
-                  ></span>
-                </div>
-                
-                <div className="col-md-12 form-group p_star">
-                  <select className="form-control" name="billing_city">
-                    <option value="1">Dhaka</option>
-                    <option value="2">Chattogram</option>
-                  </select>
-                </div>
-                <div className="col-md-12 form-group p_star">
-                    <h3>Shipping Details</h3>
-                </div>
-                <div className="col-md-12 form-group p_star">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="shipping_address"
-                    name="shipping_address"
-                  />
-                  <span
-                    className="placeholder"
-                    data-placeholder="Address line 01"
-                  ></span>
-                </div>
-                
-                <div className="col-md-12 form-group p_star">
-                  <select className="form-control" name="shipping_city">
-                    <option value="1">Dhaka</option>
-                    <option value="2">Chattogram</option>
-                  </select>
-                </div>
-                <button type='submit' className="main_btn" >Submit</button>
-              </form>
-            </div>
-            <div className="col-lg-4">
-              <div className="order_box">
-                <h2>Your Order</h2>
-                <ul className="list">
-                  <li>
-                    <a href="#"
-                      >Product
-                      <span>Total</span>
-                    </a>
-                  </li>
-                  {!isEmpty && items.map((d, key) =>
-                    <li key={d.id}>
-                      <a href="#"
-                        >{d.name}
-                        <span className="middle">x {d.quantity}</span>
-                        <span className="last">{d.itemTotal}</span>
-                      </a>
-                    </li>
-                  )}
-                  
-                </ul>
-                <ul className="list list_2">
-                  <li>
-                    <a href="#"
-                      >Subtotal
-                      <span>{cartTotal}</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      >Discount
-                      <span>{metadata.discount ?? 0}</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      >Total
-                      <span>{cartTotal - metadata.discount ?? 0}</span>
-                    </a>
-                  </li>
-                </ul>
-                
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div className="container-fluid booking py-5">
+            <div className="container py-5">
+                <div className="row g-5 align-items-center">
 
+                    <div className="col-lg-6">
+                        <h1 className="text-white mb-3">Book A Tour Deals</h1>
+                        <p className="text-white mb-4">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
+                        <form 
+                         className="row contact_form"
+                                onSubmit={saveCheckout}
+                            >
+             
+                            <div className="row g-3">
+                                <div className="col-md-6">
+                                    <div className="form-floating">
+                                        <input type="text" className="form-control bg-white border-0" id="customer_name" name="customer_name" placeholder="Your Name"/>
+                                        <label htmlFor="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-floating">
+                                        <input type="text" className="form-control bg-white border-0" id="customer_email" name="customer_email" placeholder="Your Email"/>
+                                        <label htmlFor="customer_email">Your Email</label>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <div className="form-floating">
+                                        <input type="text" className="form-control bg-white border-0" id="customer_contact" name="customer_contact" placeholder="Your Contact Number"/>
+                                        <label htmlFor="customer_contact">Your Phone Number</label>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-floating">
+                                        <input type="text" className="form-control bg-white border-0" id="customer_address" name="customer_address" placeholder="Your Adsdress"/>
+                                        <label htmlFor="customer_address">Your Address</label>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="col-md-6">
+                                    <div className="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="date" className="form-control bg-white border-0" id="datetime"  name="datetime"  placeholder="Date" />
+                                        <label htmlFor="datetime">Date</label>
+                                    </div>
+                                </div>
+                                
+                                <div className="col-md-6">
+                                    <div className="form-floating">
+                                        <input type="text" onKeyUp={p_price} className="form-control bg-white border-0" id="person" name="person" placeholder="Number of Guest" />
+                                        <label htmlFor="person">Persons</label>
+                                    </div>
+                                </div>
+                                
+                                <div className="col-12">
+                                    <div className="form-floating">
+                                        <textarea className="form-control bg-white border-0" placeholder="Special Request" id="messege" name="messege" style={{height: "100px"}}></textarea>
+                                        <label htmlFor="messege">Special Request</label>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <button className="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div className="col-lg-6">
+                        <h1 className="section-booking-title pe-3">Booking</h1>
+                        <h3 className="text-white mb-4">Details</h3>
+
+                           <div className="order_box">
+                              
+                                <table className='table'>
+                                    <thead>
+                                        <tr>
+                                            <th>Package</th>
+                                            <th>price</th>
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        {packages && (
+                                            <tr>
+                                                <td>{packages.title}</td>
+                                                <td>{packagesPrice}</td>
+                                            </tr>
+                                        )}  
+                                    </thead>
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Weblayout>
-    )
-}
+    )}
 export default Checkout;

@@ -22,26 +22,27 @@ function About(){
                     <div className="col-lg-7" style={{background: 'linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png)'}}>
                         <h5 className="section-about-title pe-3">About Us</h5>
                         <h1 className="mb-4">Welcome to <span className="text-primary">Travela</span></h1>
-                        <p className="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
-                        <p className="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
+                        <p className="mb-4">At Travela, we believe travel isn’t just about reaching a destination — it’s about the experiences, the stories, and the memories you create along the way. Whether you're chasing sunsets on tropical beaches, exploring hidden gems in historic cities, or seeking thrilling adventures off the beaten path, we're here to help you make it happen.
+                      Founded by passionate travelers, Travela was created to simplify the way you plan and book your trips. Our platform offers carefully curated travel experiences, top-rated accommodations, budget-friendly deals, and expert tips to make every journey unforgettable.</p>
+                       <h4>What We Offer:</h4>
                         <div className="row gy-2 gx-4 mb-4">
                             <div className="col-sm-6">
-                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>First className Flights</p>
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Easy-to-use travel booking tools</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Exclusive travel deals and discounts</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Handpicked tours and experiences</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Travel guides, tips, and inspiration</p>
                             </div>
                             <div className="col-sm-6">
                                 <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>24/7 Customer Service</p>
                             </div>
                         </div>
                         <a className="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>

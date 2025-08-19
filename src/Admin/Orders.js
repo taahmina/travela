@@ -8,7 +8,7 @@ function Orders() {
   const [list,setList]=useState([]);
   const [show, setShow] = useState(false);
   const [inputs, setInputs] = useState([]);
-  const orderStatus=['pending','accepted','delivered','canceled'];
+  const orderStatus=['pending','accepted','canceled'];
   const handleClose = () => {
     setShow(false)
   };
@@ -28,7 +28,7 @@ function Orders() {
 
     let datas={
       order_status:e.target.order_status.value,
-      delivery_date:e.target.delivery_date.value,
+   
       id:inputs.id
     }
    
@@ -76,10 +76,13 @@ function Orders() {
             <th>#SL</th>
             <th>Customer Name</th>
             <th>Customer Contact</th>
-            <th>Date</th>
+             <th>Customer Email</th>
+              <th>Customer Address</th>
+              <th>Date</th>
+              <th>Person</th>
+             <th>Messege</th>
             <th>Total</th>
             <th>Order Status</th>
-            <th>Delivery Date</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -89,10 +92,14 @@ function Orders() {
               <td className="text-bold-500">{key+1}</td>
               <td>{d.customer_name}</td>
               <td>{d.customer_contact}</td>
-              <td>{d.order_date}</td>
-              <td>{d.grand_total}</td>
+              <td>{d.customer_email}</td>
+              <td>{d.customer_address}</td>
+              <td>{d.datetime}</td>
+              <td>{d.person}</td>
+              <td>{d.messege}</td>
+              <td>{d.sub_total}</td>
               <td>{orderStatus[d.order_status]}</td>
-              <td>{d.delivery_date}</td>
+             
               <td>
                   <Button variant="primary" onClick={()=>{showEdit(d)}}>Edit</Button>
                   <Button variant="danger" onClick={()=>{deleteUser(d.id)}}>Delete</Button>
@@ -116,10 +123,7 @@ function Orders() {
                   )}
                   </select>
               </div>
-              <div className='form-group'>
-                  <label htmlFor='delivery_date'>Delivery Date</label>
-                  <input type='date' defaultValue={inputs.delivery_date} className='form-control' name="delivery_date" id='delivery_date'/>
-              </div>
+             
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" type='submit'>

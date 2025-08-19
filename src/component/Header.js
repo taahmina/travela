@@ -71,8 +71,8 @@ function Header() {
                  
                       <Link to={'/cart'} className="nav-item nav-link"> {totalUniqueItems} <i className="bi bi-cart"></i></Link>
                      </div>
-                   
-                    <a href="" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                    <Link to={"/package"} className='btn btn-primary rounded-pill  text-white py-2 px-4' >Book Now</Link>
+                    
                 </div>
                 
             </nav>
