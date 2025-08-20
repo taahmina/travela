@@ -53,6 +53,7 @@ function Header() {
                          <Link to={"/about"} className="nav-item nav-link">About</Link>
                         <Link to={"/service"} className="nav-item nav-link">Services</Link>
                         <Link to={"/package"} className="nav-item nav-link">Packages</Link>
+                         <Link to={"/hotel"} className="nav-item nav-link">Hotels</Link>
                         <Link to={"/blog"} className="nav-item nav-link">Blog</Link>
                        
                         <div className="nav-item dropdown">
@@ -69,7 +70,7 @@ function Header() {
                         </div>
                         <Link to={"/contact"} className="nav-item nav-link">Contact</Link> 
                  
-                      <Link to={'/cart'} className="nav-item nav-link"> {totalUniqueItems} <i className="bi bi-cart"></i></Link>
+
                      </div>
                     <Link to={"/package"} className='btn btn-primary rounded-pill  text-white py-2 px-4' >Book Now</Link>
                     

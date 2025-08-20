@@ -68,7 +68,7 @@ function Orders() {
   return (
     <Adminlayout>
       <div className='container'>
-        <h1>Orders</h1>
+        <h1>Package Booking</h1>
         
         <table className='mt-5 table table-bordered'>
           <thead>

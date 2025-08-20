@@ -11,9 +11,9 @@ function Header(){
   }
     return(
           <>
-          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+          <nav className="navbar navbar-expand-sm bg-success bg-gradient navbar-dark">
               <div className="container-fluid">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav ">
                   <li className="nav-item">
                     <Link className="nav-link" to={"/admin/dashboard"}>Dashboard</Link>
                   </li>
@@ -32,14 +32,20 @@ function Header(){
                   <li className="nav-item">
                     <Link className="nav-link" to={"/admin/packages"}>Packages</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/admin/hotels"}>Hotels</Link>
+                  </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/admin/orders"}>Orders</Link>
+                    <Link className="nav-link " to={"/admin/orders"}>Orders</Link>
+                  </li>
+                    <li className="nav-item">
+                    <Link className="nav-link " to={"/admin/orders_hotels"}>Orders_hotels</Link>
                   </li>
                   
                   
                 </ul>
-                                <button className="btn btn-link" onClick={logout}>Logout</button>
+                 <button className="btn btn-link text-white " onClick={logout}>Logout</button>
               </div>
             </nav>
           </>

@@ -16,6 +16,23 @@ function Home() {
        let res = await axios.get(`front_api/packages.php`)
        setPackages(res.data);
      }
+
+
+      const [hotels,setHotels]=useState([]);
+         useEffect(() => {
+            getHotels();
+         }, []);
+        
+          const getHotels = async (e) => {
+            let res = await axios.get(`front_api/hotels.php`)
+            setHotels(res.data);
+          }
+     
+
+
+
+
+
   return (
     <Weblayout>
 
@@ -147,7 +164,7 @@ function Home() {
                             <div className="col-12">
                                 <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                                     <div className="service-content text-end">
-                                        <h5 className="mb-4">WorldWide Tours</h5>
+                                        <h5 className="mb-4">International Travel Packages</h5>
                                         <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
@@ -159,7 +176,7 @@ function Home() {
                             <div className="col-12">
                                 <div className="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
                                     <div className="service-content text-end">
-                                        <h5 className="mb-4">Hotel Reservation</h5>
+                                        <h5 className="mb-4">Customized Tour Packages</h5>
                                         <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
@@ -171,7 +188,7 @@ function Home() {
                             <div className="col-12">
                                 <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                                     <div className="service-content text-end">
-                                        <h5 className="mb-4">Travel Guides</h5>
+                                        <h5 className="mb-4">Flight Booking</h5>
                                         <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
@@ -180,18 +197,7 @@ function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-12">
-                                <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                    <div className="service-content text-end">
-                                        <h5 className="mb-4">Event Management</h5>
-                                        <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                        </p>
-                                    </div>
-                                    <div className="service-icon p-4">
-                                        <i className="fa fa-cog fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                     <div className="col-lg-6">
@@ -202,7 +208,7 @@ function Home() {
                                         <i className="fa fa-globe fa-4x text-primary"></i>
                                     </div>
                                     <div className="service-content">
-                                        <h5 className="mb-4">WorldWide Tours</h5>
+                                        <h5 className="mb-4">Domestic Travel Packages</h5>
                                         <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
@@ -214,7 +220,7 @@ function Home() {
                                         <i className="fa fa-hotel fa-4x text-primary"></i>
                                     </div>
                                     <div className="service-content">
-                                        <h5 className="mb-4">Hotel Reservation</h5>
+                                        <h5 className="mb-4"> Hotel Booking</h5>
                                         <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
                                     </div>
@@ -232,18 +238,7 @@ function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-12">
-                                <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                    <div className="service-icon p-4">
-                                        <i className="fa fa-cog fa-4x text-primary"></i>
-                                    </div>
-                                    <div className="service-content">
-                                        <h5 className="mb-4">Event Management</h5>
-                                        <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                     <div className="col-12">
@@ -526,7 +521,73 @@ function Home() {
             </div>
         </div>
 
-          
+          <section id="packages" className="package section">
+                <div className="packge ">
+                    <div className="container py-5">
+                        <div className="mx-auto text-center mb-5 " style={{maxWidth: '900px'}}>
+                            <h5 className="section-title px-3">Packages</h5>
+                            <h1 className="mb-0">Awesome Packages</h1>
+                        </div>
+                    </div>
+                </div>
+                
+       
+        <div className="row g-4 justify-content-center px-5">
+             { packages.length > 0 && packages.map((d, key) =>
+                <div className="col-lg-4 col-md-6">
+                
+              
+                        <div className="blog-item " style={{ border: '5px ', padding: '10px' }}>
+                              
+                                <div className="blog-img">
+                 
+                                    <div className="blog-img-inner">
+                                        <img className="img-fluid w-100 rounded-top" src={`${process.env.REACT_APP_API_URL}${d.image}`} alt="Image"/>
+                                        <div className="blog-icon">
+                                            <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                        <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>{d.duration}</small>
+                                        <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{d.title}</a>
+                                        <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>1 Person</a>
+                                    </div>
+                                
+                                </div>
+                                <div className="blog-content border border-top-0 rounded-bottom p-4">
+                                    <div className="packages-price mb-3">{d.price}  
+                                    </div>
+                                            <div className="mb-3">
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                                <small className="fa fa-star text-primary"></small>
+                                            </div>
+                                        <p className="my-3">{d.description}</p>
+                                            <div className="row bg-white rounded-bottom mx-0">
+                                                <div className="col-6 text-start px-0">
+                                                    <a href="#" className="btn btn-success rounded-pill  text-white py-2 px-4">Read More</a>
+                                                </div>
+                                                <div className="col-6 text-end px-0">
+
+                                                       <Link to={`/checkout/${d.id}`} className='btn btn-primary rounded-pill  text-white py-2 px-4' >Book Now</Link>
+                                                   
+                                                </div>
+                                          </div>
+                                  
+                               </div>
+                             
+                               </div>
+                                    
+                    
+                </div>
+                   )}
+            </div> 
+           
+        </section>
+ 
         
         <div className="container-fluid ExploreTour py-5">
             <div className="container py-5">
@@ -716,76 +777,73 @@ function Home() {
                 </div>
             </div>
         </div>
-    <section id="packages" className="package section">
+    
+
+<section id="hotels" className="package section py-5">
                 <div className="packge">
                     <div className="container py-5">
                         <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>
-                            <h5 className="section-title px-3">Packages</h5>
-                            <h1 className="mb-0">Awesome Packages</h1>
+                            <h5 className="section-title px-3">Hotels</h5>
+                            <h1 className="mb-0">Places to Stay </h1>
                         </div>
                     </div>
                 </div>
                 
        
-        <div className="row g-4 justify-content-center px-5">
-             { packages.length > 0 && packages.map((d, key) =>
-                <div className="col-lg-4 col-md-6">
-                
-              
-                        <div className="blog-item " style={{ border: '5px ', padding: '10px' }}>
-                              
-                                <div className="blog-img">
-                 
-                                    <div className="blog-img-inner">
-                                        <img className="img-fluid w-100 rounded-top" src={`${process.env.REACT_APP_API_URL}${d.image}`} alt="Image"/>
-                                        <div className="blog-icon">
-                                            <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                        <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>{d.duration}</small>
-                                        <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{d.title}</a>
-                                        <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i class="fa fa-user me-2"></i>1 Person</a>
-                                    </div>
-                                
+        <div className="row g-4 justify-content-center  px-5 ">
+               {hotels.length > 0 && hotels.map((d, key) =>
+                <div className="col-lg-4 col-md-6 mb-5">
+                  
+                    <div className="blog-item" style={{ border: '5px ', padding: '10px' }}>
+                               
+                        <div className="blog-img">
+            
+                            <div className="blog-img-inner">
+                                <img className="img-fluid w-100 rounded-top" src={`${process.env.REACT_APP_API_URL}${d.image}`} alt="Image"/>
+                                <div className="blog-icon">
+                                    <a href="#" className="my-auto"><i className="fas fa-link fa-2x text-white"></i></a>
                                 </div>
-                                <div className="blog-content border border-top-0 rounded-bottom p-4">
-                                    <div className="packages-price mb-3">{d.price}  
-                                    </div>
-                                            <div className="mb-3">
-                                                <small className="fa fa-star text-primary"></small>
-                                                <small className="fa fa-star text-primary"></small>
-                                                <small className="fa fa-star text-primary"></small>
-                                                <small className="fa fa-star text-primary"></small>
-                                                <small className="fa fa-star text-primary"></small>
-                                            </div>
-                                        <p className="my-3">{d.description}</p>
-                                            <div className="row bg-white rounded-bottom mx-0">
-                                                <div className="col-6 text-start px-0">
-                                                    <a href="#" className="btn btn-success rounded-pill  text-white py-2 px-4">Read More</a>
-                                                </div>
-                                                <div className="col-6 text-end px-0">
+                            </div>
 
-                                                       <Link to={`/checkout/${d.id}`} className='btn btn-primary rounded-pill  text-white py-2 px-4' >Book Now</Link>
-                                                   
-                                                </div>
-                                          </div>
-                                  
-                               </div>
-                             
-                               </div>
-                                    
-                    
+                            <div className="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text-primary me-2"></i>{d.duration}  </small>
+                                <a href="#" className="btn-hover flex-fill text-center text-primary border-end py-2"><i className="fa fa-map-marker-alt text-primary me-2"></i>{d.title}</a>
+                                <a href="#" className="btn-hover flex-fill text-center  text-primary py-2"><i className="fa-solid fa-earth-americas text-primary "></i>1 person</a>
+                            </div>
+                        
+                        </div>
+                        <div className="blog-content border border-top-0 rounded-bottom p-4">
+                            <div className="hotels-price mb-3">{d.price}  </div>
+                                <div className="mb-3">
+                                    <small className="fa fa-star text-primary"></small>
+                                    <small className="fa fa-star text-primary"></small>
+                                    <small className="fa fa-star text-primary"></small>
+                                    <small className="fa fa-star text-primary"></small>
+                                    <small className="fa fa-star text-primary"></small>
+                                </div>
+                                <p className="my-3">{d.description}</p>
+                                <div className="row bg-white rounded-bottom mx-0">
+                                    <div className="col-6 text-start px-0">
+                                        <a href="#" className="btn btn-success rounded-pill  text-white py-2 px-4">Read More</a>
+                                    </div>
+                                    <div className="col-6 text-end px-0">
+                                        <Link to={`/checkout_hotel/${d.id}`} className='btn btn-primary rounded-pill  text-white py-2 px-4' >Book Now</Link>
+                                    </div>
+                                </div>
+                                   
+                            </div>
+                                              
+                  
+                        </div>
+                 
                 </div>
-                   )}
-            </div> 
-           
+                    )}
+            </div>
+          
         </section>
  
 
-       
-      
+
    
         <div className="container-fluid gallery py-5 my-5">
             <div className="mx-auto text-center mb-5" style={{maxWidth: '900px'}}>

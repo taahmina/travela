@@ -5,7 +5,7 @@ function Dashboard() {
 
   return (
     <Adminlayout>
-      <h1>Dashboard</h1>
+      <h1 >Welcome to the Admin Panel!</h1>
     </Adminlayout>
     
   );

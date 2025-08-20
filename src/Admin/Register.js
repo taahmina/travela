@@ -101,7 +101,7 @@ function Register() {
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      <img src="https://media.istockphoto.com/id/2171149256/vector/vector-illustration-which-can-easily-modify-or-edit-which-can-easily-modify-or-edit.jpg?s=1024x1024&w=is&k=20&c=Rdj40jloz5P7u5zLHdeGGtXExqRYnH_8Rw4DmuO7XAI="
                         className="img-fluid" alt="Sample image"/>
 
                     </div>

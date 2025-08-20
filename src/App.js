@@ -9,8 +9,10 @@ import Service from './pages/Service';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Packages_page from './pages/Packages_page';
+import Hotels_page from './pages/Hotels_page';
 
 import Checkout from './pages/Checkout';
+import Checkout_hotel from './pages/Checkout_hotel';
 
 
 
@@ -23,8 +25,10 @@ import Continents from './Admin/Continents';
 import Countries from './Admin/Countries';
 import Cities from './Admin/Cities';
 import Packages from './Admin/Packages';
+import Hotels from './Admin/Hotels';
 
 import Orders from './Admin/Orders';
+import Orders_hotels from './Admin/Orders_hotels';
 
 import Protected from './Admin/protected';
 
@@ -51,10 +55,12 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
              <Route path="/about" element={<About/>}/>
               <Route path="/service" element={<Service/>}/>
                <Route path="/package" element={<Packages_page/>}/>
+                <Route path="/hotel" element={<Hotels_page/>}/>
                <Route path="/blog" element={<Blog/>}/>
                <Route path="/contact" element={<Contact/>}/>
                
                  <Route path='/checkout/:id' element={<Checkout/>}/>
+                      <Route path='/checkout_hotel/:id' element={<Checkout_hotel/>}/>
                 <Route path="/register" element={<Register />} />
                <Route path="/login" element={<Login />} />
 
@@ -92,12 +98,26 @@ const [ isSignedIn, setIsSignedIn ] = useState(()=> {
                 <Packages /> 
             </Protected>
             } />
+
+            <Route path= {"/admin/hotels"} element={
+              <Protected  isSignedIn= {isSignedIn} >
+                <Hotels /> 
+            </Protected>
+            } />
             
-                   <Route path= {"/admin/orders"} element={
-                  <Protected  isSignedIn= {isSignedIn} >
-                    <Orders /> 
-                  </Protected>
-                  } />
+              <Route path= {"/admin/orders"} element={
+              <Protected  isSignedIn= {isSignedIn} >
+                <Orders /> 
+              </Protected>
+              } />
+
+  <Route path= {"/admin/orders_hotels"} element={
+              <Protected  isSignedIn= {isSignedIn} >
+                <Orders_hotels /> 
+              </Protected>
+              } />
+
+
 
         </Routes>
   
